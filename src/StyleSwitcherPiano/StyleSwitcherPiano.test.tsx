@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from "@testing-library/react";
 import StyleSwitcherPiano from "./StyleSwitcherPiano";
 
@@ -8,7 +9,7 @@ describe("StyleSwitcherPiano", () => {
     render(<StyleSwitcherPiano />);
     expect(screen.getByText("Classic")).toBeInTheDocument();
     expect(screen.getByText("Rounded")).toBeInTheDocument();
-    expect(screen.getByText("Organic")).toBeInTheDocument();
+    expect(screen.getByText("Cookies&Cream")).toBeInTheDocument();
   });
 
   it("applies 'active' class to the selected style button", () => {
@@ -28,8 +29,8 @@ describe("StyleSwitcherPiano", () => {
 
   it("calls setActiveStyle on button click", () => {
     render(<StyleSwitcherPiano />);
-    const organicBtn = screen.getByText("Organic");
-    fireEvent.click(organicBtn);
-    expect(organicBtn.className).toMatch(/active/);
+    const cookiesAndCreamBtn = screen.getByText("Cookies&Cream");
+    fireEvent.click(cookiesAndCreamBtn);
+    expect(cookiesAndCreamBtn.className).toMatch(/active/);
   });
 });
