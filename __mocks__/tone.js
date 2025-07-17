@@ -1,3 +1,4 @@
+// @ts-nocheck
 const triggerAttackReleaseMock = jest.fn();
 const ReverbToDestinationMock = jest.fn();
 const synthDisposeMock = jest.fn();
