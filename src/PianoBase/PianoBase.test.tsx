@@ -246,9 +246,9 @@ describe('PianoBase', () => {
 
       render(<PianoBase />);
       const piano = screen.getByTestId('piano-base');
-      const c4Key = screen.getByText('C4').parentElement!;
-      const e4Key = screen.getByText('E4').parentElement!;
-      const g4Key = piano.querySelector('[data-note="G4"]');
+      const c4Key = piano.querySelector('div.white-key[data-note="C4"]')!;
+      const e4Key = piano.querySelector('div.white-key[data-note="E4"]')!;
+      const g4Key = piano.querySelector('div.white-key[data-note="G4"]');
 
       expect(g4Key).toBeInTheDocument();
       expect(c4Key).toHaveClass('active-key');
